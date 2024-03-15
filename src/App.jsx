@@ -6,8 +6,11 @@ import React, { useState, useCallback, useEffect, useRef } from "react";
 import Button from "./Button";
 
 const App = () => {
-  const key = process.env.GOOGLE_MAPS_API_KEY;
-  console.log(key);
+  console.log(
+    "keyyy",
+    import.meta.env.VITE_GOOGLE_MAPS_API,
+    process.env.VITE_GOOGLE_MAPS_API
+  );
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     // googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAPS_API,
