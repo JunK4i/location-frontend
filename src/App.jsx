@@ -116,33 +116,33 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    const newSocket = new WebSocket(
-      "ws://express-server-production-04ab.up.railway.app/"
-    );
+  // useEffect(() => {
+  //   const newSocket = new WebSocket(
+  //     "ws://express-server-production-04ab.up.railway.app/"
+  //   );
 
-    newSocket.onopen = () => {
-      console.log("WebSocket connected");
-    };
+  //   newSocket.onopen = () => {
+  //     console.log("WebSocket connected");
+  //   };
 
-    newSocket.onclose = () => {
-      console.log("WebSocket disconnected");
-    };
+  //   newSocket.onclose = () => {
+  //     console.log("WebSocket disconnected");
+  //   };
 
-    newSocket.onmessage = (event) => {
-      console.log("Message received from server:", event.data);
-      let data = JSON.parse(event.data);
-      data = JSON.parse(data);
-      setAndroidLocation(data);
-    };
+  //   newSocket.onmessage = (event) => {
+  //     console.log("Message received from server:", event.data);
+  //     let data = JSON.parse(event.data);
+  //     data = JSON.parse(data);
+  //     setAndroidLocation(data);
+  //   };
 
-    setSocket(newSocket);
+  //   setSocket(newSocket);
 
-    // Cleanup function to close the WebSocket connection when the component unmounts
-    return () => {
-      newSocket.close();
-    };
-  }, []);
+  //   // Cleanup function to close the WebSocket connection when the component unmounts
+  //   return () => {
+  //     newSocket.close();
+  //   };
+  // }, []);
 
   return (
     <div className="max-w-screen h-full overflow-hidden">
